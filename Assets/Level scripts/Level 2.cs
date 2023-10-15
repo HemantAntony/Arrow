@@ -18,7 +18,6 @@ public class Level2 : MonoBehaviour
 
         if (lastMousePosition != (Vector2) Input.mousePosition && Input.GetMouseButton(0))
         {
-            Debug.Log("Going to animate");
             introtextAnimator.SetTrigger("FlipButton");
             fireTextAnimator.SetTrigger("FlipButton");
         }
