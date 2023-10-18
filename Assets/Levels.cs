@@ -12,7 +12,6 @@ public class Levels : MonoBehaviour
     [SerializeField] private GameObject levelsGrid;
     [SerializeField] private GameObject levelButton;
 
-    // Start is called before the first frame update
     void Start()
     {
         Object[] levels = Resources.LoadAll("Levels");
@@ -25,12 +24,6 @@ public class Levels : MonoBehaviour
             level.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (i+1).ToString();
             level.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { ChooseLevel((j+1).ToString()); });
         }
-
-        //for (int i = 0; i < levelsGrid.transform.childCount; i++)
-        //{
-        //    Button button = levelsGrid.transform.GetChild(i).GetComponent<Button>();
-        //    button.onClick.AddListener(() => { ChooseLevel(button.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text); });
-        //}
     }
 
     private void ChooseLevel(string text)
