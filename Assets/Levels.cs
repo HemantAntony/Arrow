@@ -11,6 +11,8 @@ public class Levels : MonoBehaviour
 {
     [SerializeField] private GameObject levelsGrid;
     [SerializeField] private GameObject levelButton;
+    [SerializeField] private Curtain curtain;
+    //[SerializeField] private Animator curtainAnimator;
 
     void Start()
     {
@@ -21,13 +23,13 @@ public class Levels : MonoBehaviour
             int j = i;
             var level = Instantiate(levelButton, Vector2.zero, Quaternion.identity);
             level.transform.SetParent(levelsGrid.transform, false);
-            level.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (i+1).ToString();
-            level.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { ChooseLevel((j+1).ToString()); });
+            level.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (i + 1).ToString();
+            level.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(() => { ChooseLevel((j + 1).ToString()); });
         }
     }
 
     private void ChooseLevel(string text)
     {
-        SceneManager.LoadSceneAsync(text);
+        curtain.Close(() => SceneManager.LoadSceneAsync(text));
     }
 }
