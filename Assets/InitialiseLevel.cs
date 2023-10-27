@@ -8,6 +8,7 @@ public class InitialiseLevel : MonoBehaviour
     [SerializeField] private Vector2 playerPositionOffset;
     [SerializeField] private GameObject endPrefab;
     [SerializeField] private Vector2 endPositionOffset;
+    [SerializeField] private GameObject arrowBounds;
     void Start()
     {
         Instantiate(playerPrefab, Camera.main.ViewportToWorldPoint(new Vector2(0, 0))
@@ -27,5 +28,6 @@ public class InitialiseLevel : MonoBehaviour
             cameraMovement.Initialise();
         }
 
+        arrowBounds.GetComponent<ArrowBounds>().Initialise();
     }
 }

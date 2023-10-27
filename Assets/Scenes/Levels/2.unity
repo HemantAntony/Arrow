@@ -288,6 +288,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &802131682 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1677871721359586100, guid: 20138f4bee272934089858612bdc1159, type: 3}
+  m_PrefabInstance: {fileID: 1866020412}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &818415674
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,6 +914,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1796517730}
+  - component: {fileID: 1796517731}
   - component: {fileID: 1796517729}
   m_Layer: 0
   m_Name: Manager
@@ -929,10 +935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18ab3ad8026ec594f9769f0a6bd6a4e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 987499002553539616, guid: 50bfdb2b304339f4ebceb4ad07465b88, type: 3}
-  playerPositionOffset: {x: 1, y: 2}
-  endPrefab: {fileID: 6537705528484525063, guid: fb869dd907b53c849893ffa055969c29, type: 3}
-  endPositionOffset: {x: -1, y: 1}
   introtextAnimator: {fileID: 977520649}
   fireTextAnimator: {fileID: 1385020327}
 --- !u!4 &1796517730
@@ -950,6 +952,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1796517731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796517728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96366c78b0b6a4e4888d475613a80b2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerPrefab: {fileID: 987499002553539616, guid: 50bfdb2b304339f4ebceb4ad07465b88, type: 3}
+  playerPositionOffset: {x: 1, y: 2}
+  endPrefab: {fileID: 6537705528484525063, guid: fb869dd907b53c849893ffa055969c29, type: 3}
+  endPositionOffset: {x: -1, y: 1}
+  arrowBounds: {fileID: 802131682}
 --- !u!1001 &1866020412
 PrefabInstance:
   m_ObjectHideFlags: 0

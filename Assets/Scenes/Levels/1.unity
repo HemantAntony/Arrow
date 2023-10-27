@@ -180,6 +180,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20138f4bee272934089858612bdc1159, type: 3}
+--- !u!1 &352096343 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1677871721359586100, guid: 20138f4bee272934089858612bdc1159, type: 3}
+  m_PrefabInstance: {fileID: 352096342}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &433678023
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,6 +877,7 @@ MonoBehaviour:
   playerPositionOffset: {x: 1, y: 2}
   endPrefab: {fileID: 6537705528484525063, guid: fb869dd907b53c849893ffa055969c29, type: 3}
   endPositionOffset: {x: -1, y: 1}
+  arrowBounds: {fileID: 352096343}
 --- !u!224 &2093836981
 RectTransform:
   m_ObjectHideFlags: 0

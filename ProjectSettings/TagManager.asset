@@ -10,6 +10,7 @@ TagManager:
   - Bounds
   - Target
   - Static
+  - ArrowBounds
   layers:
   - Default
   - TransparentFX

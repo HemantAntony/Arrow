@@ -6,7 +6,6 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     private GameObject player;
-
     private float movementOffset;
     private float leftClampPosition;
     private float rightClampPosition;

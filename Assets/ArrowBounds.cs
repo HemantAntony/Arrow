@@ -8,14 +8,15 @@ public class ArrowBounds : MonoBehaviour
     [SerializeField] private GameObject arrowBoundPrefab;
 
     private GameObject player;
-    private GameObject leftArrowBound;
     private float boundPositionOffset = 20;
     private float movementOffset;
     private float initialLeftArrowBoundPosition;
+    private bool initialised = false;
 
-    void Start()
+    public void Initialise()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+
         movementOffset = (transform.position - player.transform.position).x;
         initialLeftArrowBoundPosition = transform.position.x;
 
@@ -42,9 +43,16 @@ public class ArrowBounds : MonoBehaviour
         wall.localScale = new Vector2(1f, end.y - start.y + 1f);
         wall.position = new Vector2(end.x + wall.transform.localScale.x / 2, (start.y + end.y) / 2);
         wall.parent = transform;
+
+        initialised = true;
     }
     private void Update()
     {
+        if (!initialised)
+        {
+            return;
+        }
+
         if (transform.position.x != player.transform.position.x + movementOffset
             && transform.position.x >= initialLeftArrowBoundPosition)
         {
