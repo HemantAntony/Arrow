@@ -32,5 +32,6 @@ public class Target : MonoBehaviour
 
         destroy = true;
         Destroy(collision.gameObject);
+        GetComponent<BoxCollider2D>().enabled = false;
     }
 }
