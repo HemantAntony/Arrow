@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level1 : MonoBehaviour
+public class InitialiseLevel : MonoBehaviour
 {
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private Vector2 playerPositionOffset;
