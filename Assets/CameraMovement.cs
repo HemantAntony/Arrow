@@ -11,7 +11,7 @@ public class CameraMovement : MonoBehaviour
     private float leftClampPosition;
     private float rightClampPosition;
 
-    void Start()
+    public void Initialise()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         Transform ground = GameObject.FindGameObjectWithTag("Ground").transform;
@@ -19,6 +19,7 @@ public class CameraMovement : MonoBehaviour
         leftClampPosition = transform.position.x;
         rightClampPosition = ground.position.x + ground.localScale.x / 2 - Camera.main.aspect * Camera.main.orthographicSize;
     }
+
 
     private void Update()
     {
