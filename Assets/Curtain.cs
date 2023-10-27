@@ -14,7 +14,6 @@ public class Curtain : MonoBehaviour
     public void Open(Action Callback = null)
     {
         UpdateCurtainSize();
-        Debug.Log("Going to play");
         GetComponent<Animator>().SetBool("OpenCurtain", true);
         this.Callback = Callback;
     }
