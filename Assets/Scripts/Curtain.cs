@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Curtain : MonoBehaviour
 {
+    internal static Curtain Instance;
+
     private Action Callback;
 
     public void RunCallback()
@@ -14,26 +16,32 @@ public class Curtain : MonoBehaviour
     public void Open(Action Callback = null)
     {
         UpdateCurtainSize();
-        GetComponent<Animator>().SetBool("OpenCurtain", true);
         this.Callback = Callback;
+        GetComponent<Animator>().SetBool("OpenCurtain", true);
     }
-
-    public Action OnOpened;
 
     public void Close(Action Callback = null)
     {
         UpdateCurtainSize();
-        GetComponent<Animator>().SetBool("OpenCurtain", false);
         this.Callback = Callback;
+        GetComponent<Animator>().SetBool("OpenCurtain", false);
     }
+
+    private IEnumerator f()
+    {
+        yield return new WaitForSeconds(3f);
+        GetComponent<Animator>().SetBool("OpenCurtain", false);
+    }
+
 
     private void Start()
     {
+        Instance = this;
         Open();
     }
 
     private void UpdateCurtainSize()
     {
-        GetComponent<RectTransform>().localScale = new Vector2(Camera.main.aspect * Camera.main.orthographicSize, Camera.main.orthographicSize);
+        GetComponent<RectTransform>().sizeDelta = new Vector2(Screen.width + 50, Screen.height + 50);
     }
 }

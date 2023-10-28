@@ -12,6 +12,6 @@ public class End : MonoBehaviour
             return;
         }
 
-        SceneManager.LoadSceneAsync("Choose level");
+        Curtain.Instance.Close(() => SceneManager.LoadSceneAsync("Choose level"));
     }
 }

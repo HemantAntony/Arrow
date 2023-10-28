@@ -11,7 +11,7 @@ using UnityEngine.UIElements;
 public class Levels : MonoBehaviour
 {
     [SerializeField] private Transform levelsGrid;
-    [SerializeField] private Curtain curtain;
+
     void Start()
     {
         for (int i = 0; i < levelsGrid.childCount; i++)
@@ -23,6 +23,6 @@ public class Levels : MonoBehaviour
 
     public void ChooseLevel(string text)
     {
-        curtain.Close(() => SceneManager.LoadSceneAsync(text));
+        Curtain.Instance.Close(() => SceneManager.LoadSceneAsync(text));
     }
 }

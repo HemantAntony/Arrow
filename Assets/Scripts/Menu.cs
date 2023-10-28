@@ -19,11 +19,11 @@ public class Menu : MonoBehaviour
 
     public void OpenMainMenu()
     {
-        SceneManager.LoadSceneAsync("Choose level");
+        Curtain.Instance.Close(() => SceneManager.LoadSceneAsync("Choose level"));
     }
 
     public void RestartLevel()
     {
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        Curtain.Instance.Close(() => SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex));
     }
 }
