@@ -118,9 +118,73 @@ public class Movement : MonoBehaviour
     {
         arrowPivot.parent = null;
         Rigidbody2D rigidbody = arrow.AddComponent<Rigidbody2D>();
+
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 bottomLeft = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
+        Vector2 topRight = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+        Vector2 bottomRight = new Vector2(topRight.x, bottomLeft.y);
+        Vector2 topLeft = new Vector2(bottomLeft.x, topRight.y);
+
+        float finalMousePositionX = Mathf.Clamp(mousePosition.x, bottomLeft.x, topRight.x);
+        float finalMousePositionY = Mathf.Clamp(mousePosition.y, bottomLeft.y, topRight.y);
+        Vector2 finalMousePosition = new Vector2(finalMousePositionX, finalMousePositionY);
+        Vector2 arrowDirection = transform.position - (Vector3) finalMousePosition;
         
-        Vector2 direction = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        rigidbody.AddForce(direction * firePower);
+        float angleBtwArrowDirectionBottomLeft = Vector2.SignedAngle((Vector2)transform.position - bottomLeft, arrowDirection);
+        float angleBtwBottomLeftTopLeft = Vector2.SignedAngle((Vector2)transform.position - bottomLeft, (Vector2)transform.position - topLeft);
+        float angleBtwBottomLeftTopRight = Vector2.SignedAngle((Vector2)transform.position - bottomLeft, (Vector2)transform.position - topRight);
+        float angleBtwBottomLeftBottomRight = Vector2.SignedAngle((Vector2)transform.position - bottomLeft, (Vector2)transform.position - bottomRight);
+
+        // y = mx + c
+        // Finding c
+        // The finding x or y
+
+        if (angleBtwArrowDirectionBottomLeft < 0f)
+        {
+            angleBtwArrowDirectionBottomLeft = 360 + angleBtwArrowDirectionBottomLeft;
+        }
+
+        if (angleBtwBottomLeftTopLeft < 0f)
+        {
+            angleBtwBottomLeftTopLeft = 360 + angleBtwBottomLeftTopLeft;
+        }
+
+        if (angleBtwBottomLeftTopRight < 0f)
+        {
+            angleBtwBottomLeftTopRight = 360 + angleBtwBottomLeftTopRight;
+        }
+
+        if (angleBtwBottomLeftBottomRight < 0f)
+        {
+            angleBtwBottomLeftBottomRight = 360 + angleBtwBottomLeftBottomRight;
+        }
+
+        float maxMagntiude = 1f;
+
+        if (angleBtwArrowDirectionBottomLeft < angleBtwBottomLeftBottomRight)
+        {
+            float c = finalMousePositionY - arrowDirection.y / arrowDirection.x * finalMousePositionX;
+            float x = (bottomLeft.y - c) / (arrowDirection.y / arrowDirection.x);
+            maxMagntiude = ((Vector2)transform.position - new Vector2(x, bottomLeft.y)).magnitude;
+        } else if (angleBtwArrowDirectionBottomLeft < angleBtwBottomLeftTopRight)
+        {
+            float c = finalMousePositionY - arrowDirection.y / arrowDirection.x * finalMousePositionX;
+            float y = arrowDirection.y / arrowDirection.x * bottomRight.x + c;
+            maxMagntiude = ((Vector2)transform.position - new Vector2(bottomRight.x, y)).magnitude;
+        }
+        else if (angleBtwArrowDirectionBottomLeft < angleBtwBottomLeftTopLeft)
+        {
+            float c = finalMousePositionY - arrowDirection.y / arrowDirection.x * finalMousePositionX;
+            float x = (topLeft.y - c) / (arrowDirection.y / arrowDirection.x);
+            maxMagntiude = ((Vector2)transform.position - new Vector2(x, topLeft.y)).magnitude;
+        } else if (angleBtwArrowDirectionBottomLeft < 360f)
+        {
+            float c = finalMousePositionY - arrowDirection.y / arrowDirection.x * finalMousePositionX;
+            float y = arrowDirection.y / arrowDirection.x * bottomLeft.x + c;
+            maxMagntiude = ((Vector2)transform.position - new Vector2(bottomLeft.x, y)).magnitude;
+        }
+
+        rigidbody.AddForce(arrowDirection / maxMagntiude * firePower);
 
         arrow.GetComponent<Arrow>().Fired();
 

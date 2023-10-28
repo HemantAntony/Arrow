@@ -211,7 +211,7 @@ MonoBehaviour:
   arrowPivotPrefab: {fileID: 294884264991398746, guid: 3e6041305665f8341b8c48d7f7d7b960, type: 3}
   playerSpeed: 5
   jumpPower: 400
-  firePower: 100
+  firePower: 1000
 --- !u!1001 &691768583852139350
 PrefabInstance:
   m_ObjectHideFlags: 0
