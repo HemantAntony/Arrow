@@ -8,7 +8,7 @@ public class ArrowBounds : MonoBehaviour
     [SerializeField] private GameObject arrowBoundPrefab;
 
     private GameObject player;
-    private float boundPositionOffset = 20;
+    private float boundPositionOffset = 50;
     private float movementOffset;
     private float initialLeftArrowBoundPosition;
     private bool initialised = false;

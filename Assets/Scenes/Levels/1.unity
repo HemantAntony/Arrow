@@ -1885,6 +1885,10 @@ PrefabInstance:
       value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6544303452664819116, guid: 44ca8a3a73981e44c90616be9c02b44d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 22.99865
+      objectReference: {fileID: 0}
+    - target: {fileID: 6544303452664819116, guid: 44ca8a3a73981e44c90616be9c02b44d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
