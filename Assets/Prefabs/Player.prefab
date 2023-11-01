@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 4916714287870705016}
   - component: {fileID: 9151955648220354263}
   - component: {fileID: 6702452097386784590}
+  - component: {fileID: 380686916167101051}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -212,6 +213,19 @@ MonoBehaviour:
   playerSpeed: 5
   jumpPower: 400
   firePower: 1000
+--- !u!114 &380686916167101051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158587270396338929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1f49786b5608840b79d0dd709f0ce6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 0}
 --- !u!1001 &691768583852139350
 PrefabInstance:
   m_ObjectHideFlags: 0

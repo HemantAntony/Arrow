@@ -217,6 +217,6 @@ public class Movement : MonoBehaviour
     {
         var groundCheck = Physics2D.Raycast(transform.position, Vector2.down, raycastDistance);
         Collider2D collider = groundCheck.collider;
-        return collider != null && (collider.CompareTag("Ground") || collider.CompareTag("Static"));
+        return collider != null && (collider.CompareTag("Ground") || collider.CompareTag("Static") || collider.CompareTag("Harm"));
     }
 }
