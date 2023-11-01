@@ -11,7 +11,12 @@ public class HealthBar : MonoBehaviour
 
     public void UpdateBar(int amount)
     {
-        StartCoroutine(ChangeBar(GetComponent<Slider>().value, (float) amount / 100));
+        StartCoroutine(ChangeBar(GetComponent<Slider>().value, (float)amount / 100));
+
+        if (amount == 0)
+        {
+            Character.instance.showDeathAnimation();
+        }
     }
 
     private void Start()

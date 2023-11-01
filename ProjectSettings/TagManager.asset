@@ -11,6 +11,8 @@ TagManager:
   - Target
   - Static
   - ArrowBounds
+  - HealthBar
+  - Harm
   layers:
   - Default
   - TransparentFX
