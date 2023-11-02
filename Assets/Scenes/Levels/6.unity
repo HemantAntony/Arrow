@@ -747,9 +747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 987499002553539616, guid: 50bfdb2b304339f4ebceb4ad07465b88, type: 3}
-  playerPositionOffset: {x: 1, y: 2}
   endPrefab: {fileID: 6537705528484525063, guid: fb869dd907b53c849893ffa055969c29, type: 3}
-  endPositionOffset: -1
   arrowBounds: {fileID: 80233170308724332}
   ground: {fileID: 185398113}
 --- !u!1 &865071874
@@ -1179,8 +1177,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 194532074}
-  - {fileID: 1626523645}
   - {fileID: 37855847}
+  - {fileID: 1626523645}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
