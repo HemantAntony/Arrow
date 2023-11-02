@@ -25,7 +25,7 @@ public class Target : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != "Arrow" && !collision.gameObject.GetComponent<Arrow>().fired)
+        if (!collision.CompareTag("Arrow") || !collision.gameObject.GetComponent<Arrow>().fired)
         {
             return;
         }
