@@ -12,6 +12,12 @@ public class Character : MonoBehaviour
 
     private int health = 100;
 
+    public void setHealth(int amount)
+    {
+        health = amount;
+        HealthBar.instance.UpdateBar(health);
+    }
+
     public void decreaseHealth(int amount)
     {
         health -= amount;

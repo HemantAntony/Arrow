@@ -13,6 +13,7 @@ TagManager:
   - ArrowBounds
   - HealthBar
   - Harm
+  - Heal
   layers:
   - Default
   - TransparentFX

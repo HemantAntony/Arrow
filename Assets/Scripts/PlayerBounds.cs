@@ -45,5 +45,6 @@ public class PlayerBounds : MonoBehaviour
     void Start()
     {
         instance = this;
+        UpdatePlayerBounds();
     }
 }
