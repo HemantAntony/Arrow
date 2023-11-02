@@ -391,6 +391,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &677476487 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6544303452664819116, guid: 44ca8a3a73981e44c90616be9c02b44d, type: 3}
+  m_PrefabInstance: {fileID: 1955632978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &732710830
 GameObject:
   m_ObjectHideFlags: 0
@@ -813,7 +818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6544303452664819116, guid: 44ca8a3a73981e44c90616be9c02b44d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 22.99865
+      value: 24.609373
       objectReference: {fileID: 0}
     - target: {fileID: 6544303452664819116, guid: 44ca8a3a73981e44c90616be9c02b44d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -890,10 +895,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 987499002553539616, guid: 50bfdb2b304339f4ebceb4ad07465b88, type: 3}
-  playerPositionOffset: {x: 1, y: 2}
   endPrefab: {fileID: 6537705528484525063, guid: fb869dd907b53c849893ffa055969c29, type: 3}
-  endPositionOffset: {x: -1, y: 1}
   arrowBounds: {fileID: 352096343}
+  ground: {fileID: 677476487}
 --- !u!224 &2093836981
 RectTransform:
   m_ObjectHideFlags: 0

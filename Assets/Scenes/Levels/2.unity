@@ -128,6 +128,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6927602370939110875, guid: ec16c89a7e975de4cbfa2ae29c6bb3de, type: 3}
   m_PrefabInstance: {fileID: 360999692}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &223273802 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6544303452664819116, guid: 44ca8a3a73981e44c90616be9c02b44d, type: 3}
+  m_PrefabInstance: {fileID: 1955632978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &360999692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -970,10 +975,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 987499002553539616, guid: 50bfdb2b304339f4ebceb4ad07465b88, type: 3}
-  playerPositionOffset: {x: 1, y: 2}
   endPrefab: {fileID: 6537705528484525063, guid: fb869dd907b53c849893ffa055969c29, type: 3}
-  endPositionOffset: {x: -1, y: 1}
   arrowBounds: {fileID: 802131682}
+  ground: {fileID: 223273802}
 --- !u!1001 &1866020412
 PrefabInstance:
   m_ObjectHideFlags: 0
