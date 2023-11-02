@@ -260,6 +260,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArrowPivot
       objectReference: {fileID: 0}
+    - target: {fileID: 294884264991398746, guid: 3e6041305665f8341b8c48d7f7d7b960, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3653058958924839971, guid: 3e6041305665f8341b8c48d7f7d7b960, type: 3}
       propertyPath: character
       value: 
@@ -302,6 +306,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5975521669105908596, guid: 3e6041305665f8341b8c48d7f7d7b960, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595299845859149477, guid: 3e6041305665f8341b8c48d7f7d7b960, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

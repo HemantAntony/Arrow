@@ -16,8 +16,9 @@ public class Movement : MonoBehaviour
     [SerializeField] private int jumpPower = 400;
     [SerializeField] private int firePower = 100;
 
-    private Rigidbody2D playerRigidBody;
+    static readonly int layerMask = 1 << 7 | 1 << 6;
 
+    private Rigidbody2D playerRigidBody;
     private float raycastDistance = 0.8f;
     private float reloadTime = 1f;
 
@@ -116,6 +117,11 @@ public class Movement : MonoBehaviour
 
     private void FireArrow()
     {
+        if (arrow == null)
+        {
+            return;
+        }
+
         arrowPivot.parent = null;
         Rigidbody2D rigidbody = arrow.AddComponent<Rigidbody2D>();
 
@@ -215,8 +221,6 @@ public class Movement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        var groundCheck = Physics2D.Raycast(transform.position, Vector2.down, raycastDistance);
-        Collider2D collider = groundCheck.collider;
-        return collider != null && (collider.CompareTag("Ground") || collider.CompareTag("Static") || collider.CompareTag("Harm"));
+        return Physics2D.Raycast(transform.position, Vector2.down, raycastDistance, layerMask).collider != null;
     }
 }

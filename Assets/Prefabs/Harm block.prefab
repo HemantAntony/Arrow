@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7377206476369545351}
   - component: {fileID: 3454775385476719380}
   - component: {fileID: 9013508267263790350}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Harm block
   m_TagString: Harm
   m_Icon: {fileID: 0}
